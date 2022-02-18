@@ -11,6 +11,7 @@
 * Validation
 * Spring Boot Actuator
 
+
 ### GitHub
 
 * [GitHub Permalinık](https://github.com/hamitmizrak/SpringMvcSpringDataSpringRest)
