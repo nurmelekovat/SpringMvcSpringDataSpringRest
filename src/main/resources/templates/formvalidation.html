@@ -13,36 +13,39 @@
 <!--th:action:getMapping
 th:object:model key-->
 <p th:text="#{form}" class="text-center display-4 text-uppercase"></p>
-
 <form th:method="post" th:action="@{/formurl}" th:object="${key_form}" >
-
     <div class="container">
         <div class="row">
             <div th:text="#{userName}" class="col-md-2">:</div>
             <div class="col-md-10 form-group" >
-                <input th:field="*{userName}"  type="text"  class="form-control" autofocus    >
+                <input th:field="*{userName}"  type="text"  class="form-control" autofocus>
+                <div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" ></div>
             </div>
 
             <div th:text="#{userSurname}" class="col-md-2">:</div>
             <div class="col-md-10 form-group" >
-                <input th:field="*{userSurname}"  type="text"  class="form-control"     >
+                <input th:field="*{userSurname}"  type="text"  class="form-control" >
+                <div th:if="${#fields.hasErrors('userSurname')}" th:errors="*{userSurname}" ></div>
             </div>
 
             <div th:text="#{emailAddress}" class="col-md-2">:</div>
             <div class="col-md-10 form-group" >
                 <input th:field="*{emailAddress}"  type="text"  class="form-control"     >
+                <div th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}" ></div>
             </div>
 
 
             <div th:text="#{userAge}" class="col-md-2">:</div>
             <div class="col-md-10 form-group" >
                 <input th:field="*{userAge}"  type="text"  class="form-control"     >
+                <div th:if="${#fields.hasErrors('userAge')}" th:errors="*{userAge}" ></div>
             </div>
 
 
             <div th:text="#{userMessage}" class="col-md-2">:</div>
             <div class="col-md-10 form-group" >
                 <input th:field="*{userMessage}"  type="text"  class="form-control"     >
+                <div th:if="${#fields.hasErrors('userMessage')}" th:errors="*{userMessage}" ></div>
             </div>
 
 
@@ -51,11 +54,36 @@ th:object:model key-->
                 <input type="reset" class="btn btn-danger" value="Temizle" >
                 <input type="submit" class="btn btn-primary" value="Gönder" >
             </div>
-
         </div>
     </div>
 </form>
+<!--end codes-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+26  src/main/resources/templates/success.html
+@@ -0,0 +1,26 @@
+<!doctype html>
+<html  th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <link rel="stylesheet"   th:href="@{/css/style.css}">
+    <script th:src="@{/js/template.js}"></script>
+</head>
+<body>
+<!--start codes-->
+
+
+<h1 class="text-center text-primary">Kayıt başaırılı </h1>
+<p th:text="#{adi}"></p>
+
+<a href="templates/birinci">Click me</a>
 
 <!--end codes-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
