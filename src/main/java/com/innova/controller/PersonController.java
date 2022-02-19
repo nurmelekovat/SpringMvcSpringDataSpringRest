@@ -104,5 +104,4 @@ public class PersonController {
         return personEntities+" ";
     }
 
-
 }
