@@ -30,6 +30,7 @@ public class ComputerController {
                 .computerTrade("computerTrade44")
                 .computerPrice("computerPrice44")
                 .build();
+        //kaydettim
         computerRepository.save(computerEntity);
         return "Ekleme başarılı";
     }
@@ -49,6 +50,7 @@ public class ComputerController {
                 .computerTrade(computerTrade)
                 .computerPrice(computerPrice)
                 .build();
+        //kaydettim
         computerRepository.save(computerEntity);
         return "Ekleme başarılı Request param";
     }
@@ -59,8 +61,10 @@ public class ComputerController {
     @GetMapping("/computer/find/{id}")
     @ResponseBody
     public String getFindComputer(@PathVariable(name="id") Long idim ){
+        //optional NullPointer Excepiton almamak icin
         Optional<ComputerEntity> optional=computerRepository.findById(idim);
         if(optional.isPresent()){
+            //datayı getirdim
             ComputerEntity computerEntity2= optional.get();
             return "bulundu "+computerEntity2;
         }else{
@@ -78,6 +82,7 @@ public class ComputerController {
         Optional<ComputerEntity> optional=computerRepository.findById(idim);
         if(optional.isPresent()){
             ComputerEntity computerEntity2= optional.get();
+            //sildim
             computerRepository.deleteById(idim);
             return "silme yapıldı "+computerEntity2;
         }else{
