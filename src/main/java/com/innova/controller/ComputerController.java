@@ -1,5 +1,4 @@
 package com.innova.controller;
-
 import com.innova.entity.ComputerEntity;
 import com.innova.repository.IComputerRepository;
 import lombok.extern.log4j.Log4j2;
@@ -9,9 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.Optional;
-
 
 @Controller
 @Log4j2
@@ -157,12 +154,5 @@ public class ComputerController {
         }
         return iterableList+"\n";
     }
-
-
-
-
-
-
-
 
 }
