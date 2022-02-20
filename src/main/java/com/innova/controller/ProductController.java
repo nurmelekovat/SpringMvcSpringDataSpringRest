@@ -33,7 +33,7 @@ public class ProductController {
         ProductDto productDto = restTemplate.getForObject(URL, ProductDto.class);//object
         return "client resten veri aldı: "+productDto.getProductName().toUpperCase();
     }
-    // http://localhost:8080/client/controller/productdto
+    // http://localhost:8080/client/controller/productdto/special/Deneme44
     @GetMapping("/client/controller/productdto/special/{urun_adi}")
     @ResponseBody
     public String getProductServicesResponseEntity(@PathVariable("urun_adi") String urunAdi) {
