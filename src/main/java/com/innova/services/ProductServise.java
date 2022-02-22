@@ -11,6 +11,12 @@ import java.util.List;
 @RestController
 @Log4j2
 public class ProductServise {
+    //@GetMapping ==> Select
+//    @PostMapping ==> Insert
+//    @PutMapping ===> update
+//    @DeleteMApping ==> delete
+
+
 
     // http://localhost:8080/rest/xml
     @GetMapping(value = "/rest/xml",produces = MediaType.APPLICATION_XML_VALUE)
@@ -48,12 +54,18 @@ public class ProductServise {
     }
     ///////////////////////
     //PUT
-    @PutMapping("put/productdto")
+    @PutMapping("/put/productdto")
     public ProductDto putProduct( @RequestBody ProductDto productDto){
         log.info(productDto);
         //database
         return  productDto;
     }
-
+    ///////////////////////
+    //DELETE
+    @DeleteMapping("/delete/productdto/{id}")
+    public void deleteProduct( @PathVariable(name = "id") Long id){
+        log.info("silindi....  RestController "+id);
+        //database
+    }
 
 }
