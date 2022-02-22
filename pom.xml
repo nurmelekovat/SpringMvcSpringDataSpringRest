@@ -16,6 +16,8 @@
     <description>SpringMvcSpringDataSpringRest</description>
     <properties>
         <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencies>
         <!-- swagger open-api-3.0-->
@@ -24,7 +26,6 @@
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.4</version>
         </dependency>
-
         <!-- model mapper -->
         <!--<dependency>
             <groupId>org.modelmapper</groupId>
