@@ -86,9 +86,9 @@ public class SecurityController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String user = "";
         if (authentication != null) {
-            user = authentication.getName();
+            user = authentication.getName().toUpperCase();
         }
-        model.addAttribute("system_user", user);
+        model.addAttribute("system_user", user.toUpperCase());
         return "/aynisayfafarklikullanici/farklıkullanicilar";
     }
 
